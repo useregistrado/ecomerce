@@ -1,0 +1,404 @@
+/* Aplica la fuente 'Helvetica' a todos los elementos */
+* {
+    font-family: 'Helvetica';
+}
+
+/* Elimina el margen y padding predeterminados del body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para la barra negra */
+.barra_negra {
+    display: flex; /* Usar flexbox para la disposición */
+    background-color: black; /* Fondo negro */
+    height: 30px; /* Altura fija */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    padding: 8px; /* Espaciado interno */
+}
+
+/* Estilo para el texto dentro de la barra negra */
+.barra_negra p {
+    color: #fff; /* Color del texto blanco */
+    font-size: 30px; /* Tamaño de fuente grande */
+    font-weight: bold; /* Texto en negrita */
+    margin: 0; /* Elimina el margen predeterminado */
+    transition: 0.2s;
+    animation: ejemploAnimacion 15s linear infinite;
+}
+
+.barra_negra span {
+    color: #ff6600;
+}
+
+
+@keyframes ejemploAnimacion {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-55%); }
+    75% { transform: translateX(55%); }
+    100% { transform: translateX(0); }
+
+}
+
+
+/* Ajusta las imágenes para escalar y ocupar todo el ancho del contenedor */
+img {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+/* Define el margen de los elementos section */
+section {
+    margin: 0 100px; /* Margen horizontal de 100px */
+}
+
+/* Estilo para los encabezados h1 */
+h1 {
+    font-size: 30px; /* Tamaño de fuente grande */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Contenedor para centrar las categorías */
+.categorias_ {
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Estilo para el contenedor de categorías con scroll horizontal */
+.categorias {
+    display: flex; /* Usar flexbox para la disposición */
+    overflow-x: auto; /* Permite el scroll horizontal */
+    white-space: nowrap; /* Evita el salto de línea de los elementos */
+    box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+}
+
+/* Estilo para los botones dentro de .categorias */
+.categorias button {
+    margin: 0 15px; /* Margen horizontal entre los botones */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #aaa; /* Borde gris */
+    min-width: 100px; /* Ancho mínimo */
+    font-weight: bold; /* Texto en negrita */
+    color: #02483e; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Efecto hover para los botones dentro de .categorias */
+.categorias button:hover {
+    background-color: #057c46; /* Fondo verde */
+    color: #FFF; /* Texto blanco */
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Estilo específico para el botón con id #todo */
+#todo {
+    background-color: #057c46; /* Fondo verde */
+    color: #FFF; /* Texto blanco */
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Estilo para los elementos dentro de .categorias */
+.categorias > * {
+    flex-shrink: 0; /* Evita que los elementos se reduzcan */
+    margin: 0 10px; /* Añade un margen entre los elementos */
+}
+
+/* Estilo para las tarjetas de producto */
+.product-card {
+    flex: 1 1 25%;
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 16px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Centra el texto */
+    transition: transform 0.2s; /* Transición para el efecto hover */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    min-width: 300px;
+    max-width: 20%;
+}
+
+/* Efecto hover para las tarjetas de producto */
+.product-card:hover {
+    transform: scale(1.05); /* Escala ligeramente la tarjeta */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas de producto */
+.product-image {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Altura automática */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para el título del producto */
+.product-title {
+    font-size: 1.5em; /* Tamaño de fuente */
+    margin: 16px 0; /* Margen vertical */
+}
+
+/* Estilo para el precio del producto */
+.product-price {
+    color: #28a745; /* Color verde */
+    font-size: 1.5em; /* Tamaño de fuente */
+    margin-bottom: 16px; /* Margen inferior */
+}
+
+/* Estilo para la descripción del producto */
+.product-description {
+    font-size: 1em; /* Tamaño de fuente */
+    color: #666; /* Color gris */
+    margin-bottom: 16px; /* Margen inferior */
+}
+
+/* Estilo para el botón de agregar al carrito */
+.agregar_carrito {
+    background-color: #02483e; /* Fondo verde oscuro */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    font-size: 1em; /* Tamaño de fuente */
+    text-decoration: none;
+}
+
+/* Efecto hover para el botón de agregar al carrito */
+.agregar_carrito:hover {
+    background-color: #0056b3; /* Fondo azul */
+}
+
+/* Contenedor para las filas de productos */
+.fila_productos {
+    display: flex; /* Usar flexbox para la disposición */
+    justify-content: space-around; /* Espacio alrededor de los elementos */
+    margin-top: 50px; /* Margen superior */
+    flex-wrap: wrap;
+    gap: 3.5em;
+}
+
+/* Estilo para el botón de comprar */
+.comprar {
+    background-color: #9bb61b; /* Fondo verde claro */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    font-size: 1em; /* Tamaño de fuente */
+    margin-top: 10px;
+}
+
+/* Efecto hover para el botón de comprar */
+.comprar:hover {
+    background-color: #f8be00; /* Fondo amarillo */
+}
+
+/* Estilo para el pie de página */
+.pie-de-pagina {
+    background-color: #2b1719; /* Fondo marrón oscuro */
+    color: white; /* Texto blanco */
+    padding: 20px 0; /* Espaciado interno vertical */
+    text-align: center; /* Centra el texto */
+    margin-top: 50px; /* Margen superior */
+}
+
+/* Contenedor dentro del pie de página */
+.contenedor-pie {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Disposición en columna */
+    align-items: center; /* Centra los elementos */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Estilo para la lista de enlaces rápidos */
+.enlaces-rapidos {
+    list-style-type: none; /* Sin estilo de lista */
+    padding: 0; /* Sin padding */
+    margin: 0 0 20px 0; /* Margen inferior */
+    display: flex; /* Usar flexbox */
+    gap: 15px; /* Espacio entre los enlaces */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Estilo para los elementos de la lista de enlaces rápidos */
+.enlaces-rapidos li {
+    margin: 0; /* Sin margen */
+}
+
+/* Estilo para los enlaces dentro de .enlaces-rapidos */
+.enlaces-rapidos a {
+    color: white; /* Color del texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    transition: color 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto hover para los enlaces dentro de .enlaces-rapidos */
+.enlaces-rapidos a:hover {
+    color: #ff6600; /* Color naranja */
+}
+
+/* Contenedor para las redes sociales */
+.redes-sociales {
+    margin-bottom: 20px; /* Margen inferior */
+    display: flex; /* Usar flexbox */
+}
+
+/* Estilo para los enlaces de redes sociales */
+.redes-sociales a {
+    color: white; /* Color del texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 10px; /* Margen horizontal */
+    font-size: 1.5em; /* Tamaño de fuente */
+    transition: color 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto hover para los enlaces de redes sociales */
+.redes-sociales a:hover {
+    color: #ff6600; /* Color naranja */
+}
+
+/* Estilo para el texto de derechos de autor */
+.derechos-autor {
+    font-size: 0.9em; /* Tamaño de fuente pequeño */
+    color: #ccc; /* Color gris claro */
+}
+
+/* Estilo para las imágenes dentro de .redes-sociales */
+.redes-sociales img {
+    height: 30px; /* Altura fija */
+}
+
+/* Estilo para el botón de WhatsApp flotante */
+.boton-whatsapp {
+    position: fixed; /* Posición fija */
+    bottom: 40px; /* Espaciado desde abajo */
+    right: 40px; /* Espaciado desde la derecha */
+    background-color: #25d366; /* Fondo verde de WhatsApp */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma redonda */
+    width: 70px; /* Ancho fijo */
+    height: 70px; /* Altura fija */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centra verticalmente el icono */
+    justify-content: center; /* Centra horizontalmente el icono */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Efecto hover para el botón de WhatsApp */
+.boton-whatsapp:hover {
+    transform: scale(1.1); /* Escala ligeramente el botón */
+}
+
+/* Estilo para el icono dentro del botón de WhatsApp */
+.boton-whatsapp i {
+    font-size: 2em; /* Tamaño de fuente grande */
+}
+
+/* Media query para pantallas de tamaño intermedio */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .categorias {
+      overflow-x: scroll; /* Activa el scroll horizontal */
+    }
+
+          /* Estilo para el texto dentro de la barra negra */
+    .barra_negra p {
+        font-size: 16px; /* Tamaño de fuente grande */
+    }
+
+    .categorias button {
+        margin: 0 7px; /* Margen horizontal entre los botones */
+        background-color: #fff; /* Fondo blanco */
+        border: 1px solid #aaa; /* Borde gris */
+        min-width: 90px; /* Ancho mínimo */
+        padding: 7px; /* Espaciado interno */
+        font-size: 14px; /* Tamaño de fuente */
+    }
+  }
+
+/* Media query para pantallas de celular */
+@media (min-width: 0px) and (max-width: 767px) {
+    .categorias {
+      overflow-x: scroll; /* Activa el scroll horizontal */
+    }
+
+    /* Define el margen de los elementos section */
+    section {
+        margin: 0 10px; /* Margen horizontal de 100px */
+    }
+
+    .boton-whatsapp {
+        height: 60px;
+        width: 60px;
+        right: 10px;
+        bottom: 20px;
+    }
+
+    .product-card {
+        min-width: 60%;
+    }
+
+    .categorias button {
+        margin: 0 7px; /* Margen horizontal entre los botones */
+        background-color: #fff; /* Fondo blanco */
+        border: 1px solid #aaa; /* Borde gris */
+        min-width: 90px; /* Ancho mínimo */
+        padding: 7px; /* Espaciado interno */
+        font-size: 14px; /* Tamaño de fuente */
+    }
+    
+    .categorias {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+        /* Estilo para el texto dentro de la barra negra */
+    .barra_negra p {
+        color: #fff; /* Color del texto blanco */
+        font-size: 12px; /* Tamaño de fuente grande */
+        font-weight: bold; /* Texto en negrita */
+        animation: ejemploAnimacion 5s linear infinite;
+
+    }
+
+    .barra-navegacion {
+        font-size: 14px;
+    }
+
+    .barra-navegacion input {
+        margin-top: 10px;
+        height: 25px;
+    }
+
+    @keyframes ejemploAnimacion {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-15%); }
+        75% { transform: translateX(15%); }
+        100% { transform: translateX(0); }
+    }
+  }
+
+  /* Estilo del scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #02483e; /* Color del thumb del scrollbar */
+    border-radius: 10px; /* Bordes redondeados del thumb */
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7; /* Color de fondo del track del scrollbar */
+}
